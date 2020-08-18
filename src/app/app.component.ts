@@ -46,7 +46,7 @@ export class AppComponent {
         { text: 'Total', datafield: 'total', cellsrenderer: this.totalcolumnrenderer, cellsalign: 'right' }
     ];
 
-    constructor( private http: HttpService ) {
+    constructor(  ) {
     }
 
     firstNames: string[] =

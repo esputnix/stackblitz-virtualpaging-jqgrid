@@ -76,7 +76,10 @@ export class AppComponent {
       ];
 
     makeHttpRequest() {
-      this.http.getData("params");
+      this.http.getData("params")
+      .subscribe(rows => {
+        console.log("... 0000 >>>>.getData.rows:", rows);
+      }); 
     }
 
     generateData(startindex: number, endindex: number): any {

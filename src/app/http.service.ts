@@ -8,9 +8,11 @@ import { timer } from 'rxjs';
 })
 export class HttpService {
   constructor(private http: HttpClient) {}
+  jsonFile = '../assets/products.json';
 
   getData(params) {
     console.log("HttpService: got params:", params);
-    return this.http.get("../assets/users.json")
+
+    return this.http.get(this.jsonFile)
   }
 }

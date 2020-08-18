@@ -8,6 +8,9 @@ import { HttpService } from './http.service';
 })
 
 export class AppComponent {
+    constructor( private http: HttpService ) {
+    }
+
     source: any =
     {
         datatype: 'array',
@@ -27,9 +30,7 @@ export class AppComponent {
 
     rendergridrows = (params: any): any[] => {
         let data = this.generateData(params.startindex, params.endindex);
-
-        this.http.getData(params)
-
+        // this.http.getData(params);
         return data;
     }
 
@@ -49,8 +50,7 @@ export class AppComponent {
         { text: 'Total', datafield: 'total', cellsrenderer: this.totalcolumnrenderer, cellsalign: 'right' }
     ];
 
-    constructor( private http: HttpService ) {
-    }
+
 
     firstNames: string[] =
       [
@@ -71,6 +71,10 @@ export class AppComponent {
       [
           '2.25', '1.5', '3.0', '3.3', '4.5', '3.6', '3.8', '2.5', '5.0', '1.75', '3.25', '4.0'
       ];
+
+    makeHttpRequest(params) {
+      this.http.getData(params);
+    }
 
     generateData(startindex: number, endindex: number): any {
         let data = {};

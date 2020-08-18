@@ -1,8 +1,15 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class HttpService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
+
+
+  getData(paginginformation) {
+    return http.get("../assets/user.json")
+  }
+
 
 }

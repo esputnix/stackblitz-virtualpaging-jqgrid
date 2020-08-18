@@ -9,6 +9,7 @@ import { HttpService } from './http.service';
 
 export class AppComponent {
     constructor( private http: HttpService ) {
+      console.log("00001")
     }
 
     source: any =
@@ -29,9 +30,10 @@ export class AppComponent {
     dataAdapter: any = new jqx.dataAdapter(this.source);
 
     rendergridrows = (params: any): any[] => {
+        console.log("00000")
         let data = this.generateData(params.startindex, params.endindex);
         // this.http.getData(params);
-        this.makeHttpRequest(params);
+        // this.makeHttpRequest(params);
         return data;
     }
 

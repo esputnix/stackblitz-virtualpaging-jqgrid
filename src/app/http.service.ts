@@ -7,14 +7,10 @@ import { timer } from 'rxjs';
   providedIn: 'root'
 })
 export class HttpService {
-  jsonFile = '../assets/products.json';
-
   constructor(private http: HttpClient) {}
 
-  getProductsOverHTTP(): Observable<any> {
-    return this.http.get(this.jsonFile);
-  }
-  getData(paginginformation) {
+  getData(params) {
+    console.log("HttpService: got params:", params);
     return http.get("../assets/user.json")
   }
 }

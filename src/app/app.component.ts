@@ -27,6 +27,9 @@ export class AppComponent {
 
     rendergridrows = (params: any): any[] => {
         let data = this.generateData(params.startindex, params.endindex);
+
+        
+
         return data;
     }
 

@@ -11,6 +11,6 @@ export class HttpService {
 
   getData(params) {
     console.log("HttpService: got params:", params);
-    return this.http.get("../assets/user.json")
+    return this.http.get("../assets/users.json")
   }
 }

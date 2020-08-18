@@ -1,5 +1,7 @@
 ﻿import { Component } from '@angular/core';
 
+import { HttpService } from '../http.service';
+
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html'
@@ -43,6 +45,9 @@ export class AppComponent {
         { text: 'Unit Price', datafield: 'price', width: 100, cellsalign: 'right', cellsformat: 'c2' },
         { text: 'Total', datafield: 'total', cellsrenderer: this.totalcolumnrenderer, cellsalign: 'right' }
     ];
+
+    constructor( private http: HttpService ) {
+    }
 
     firstNames: string[] =
       [

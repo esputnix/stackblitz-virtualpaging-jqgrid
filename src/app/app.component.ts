@@ -32,9 +32,15 @@ export class AppComponent {
     rendergridrows = (params: any): any[] => {
         console.log("00000")
         let data = this.generateData(params.startindex, params.endindex);
-        // this.http.getData(params);
-        // this.makeHttpRequest(params);
         return data;
+
+        this.http.getData("params")
+        .subscribe(rows => {
+          console.log("<<<< 0000 >>>> rendergridrows.getData.rows:", rows);
+          return rows;
+        });
+
+        
     }
 
     totalcolumnrenderer = (row: number, column: any, cellvalue: any): string => {
@@ -79,6 +85,7 @@ export class AppComponent {
       this.http.getData("params")
       .subscribe(rows => {
         console.log("... 0000 >>>>.getData.rows:", rows);
+        return rows;
       }); 
     }
 

@@ -30,9 +30,9 @@ export class AppComponent {
     dataAdapter: any = new jqx.dataAdapter(this.source);
 
     rendergridrows = (params: any): any[] => {
-        console.log("00000")
-        let data = this.generateData(params.startindex, params.endindex);
-        return data;
+        // console.log("00000")
+        // let data = this.generateData(params.startindex, params.endindex);
+        // return data;
 
         this.http.getData("params")
         .subscribe(rows => {
